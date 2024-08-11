@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Suffix Generator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Suffix Generator</h1>
+        <form action="/add" method="POST">
+            <label for="username">Base Username (Root Word):</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Generate Username</button>
+        </form>
+        <% if (username) { %>
+            <h2>Generated Username</h2>
+            <p><strong><%= username.original %></strong>: <%= username.modified %></p>
+        <% } %>
+        <a href="/history">View All Generated Usernames</a>
+    </div>
+</body>
+</html>
